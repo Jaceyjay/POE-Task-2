@@ -474,7 +474,7 @@ namespace POE
         {
             tick++;
             label1.Text = tick.ToString(); //converts the timer to text onto the label
-
+            MainEngine.RB.ResourceGenerate();
             UnitMovement();
         }
         private void startBtn_Click_1(object sender, EventArgs e)   // once the start button is pressed the timer begins and text is changed to stop. if pressed again timer is stopped and text is changed to start
@@ -507,11 +507,12 @@ namespace POE
             GridLayout.Controls.Clear();
             timer1.Stop();
             tick = 0;
-
+            label1.Text = "0";
             startBtn.Text = "Start";
             counter = 0;
             textBox1.Text = "";
-
+            ResourceNum2.Text = "";
+            MainEngine.RB.ClearResources();
     
         }
         private void GridLayout_Paint(object sender, PaintEventArgs e)
